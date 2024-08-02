@@ -114,3 +114,19 @@ svg {
   stroke-dashoffset: 100;
   transition: 0.6s ease-out;
 }
+
+.percentage {
+  position: absolute;
+  top: 38%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em;
+  font-weight: bold;
+  transition: all 0.5s;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.card:hover .percentage {
+  opacity: 1;
+}
