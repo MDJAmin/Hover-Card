@@ -13,5 +13,19 @@ document.querySelectorAll(".card").forEach((card) => {
         clearInterval(interval);
       }
     }, 5);
+    card.addEventListener('mouseleave', function reset() {
+        clearInterval(interval); 
+  
+        let resetCurrent = parseInt(percentage.textContent);
+        const resetInterval = setInterval(() => {
+          if (resetCurrent >= 0) {
+            percentage.textContent = `${resetCurrent}%`;
+            resetCurrent--;
+          } else {
+            clearInterval(resetInterval);
+            card.removeEventListener('mouseleave', reset);
+          }
+        }, 10); 
+      });
   });
 });
